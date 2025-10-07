@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:musicappflutter/pages/home_pages.dart';
 import 'package:musicappflutter/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:musicappflutter/components/my_drawer.dart';
+import 'package:musicappflutter/model/playlist_Provider.dart'; // <-- Add this import
 
 void main() {
   runApp(
-    ChangeNotifierProvider(create: (context) => ThemeProvider(),
-    child: const MyApp(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => PlaylistProvider()),
+      ],
+      child: const MyApp(),
     ),
   );
 }

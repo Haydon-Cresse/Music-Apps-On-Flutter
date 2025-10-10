@@ -7,15 +7,15 @@ class PlaylistProvider extends ChangeNotifier {
     Song(
       songName: "Bury The Light",
       artistName: "Casey Edwards",
-      albumImagepath: "assets/Images/Casey_Edward-Bury_The_Light.jpeg",
-      audioPath: "assets/Audio/Casey_Edward-Bury_The_Light.mp3",
+      albumImagepath: "assets/images/Casey_Edward-Bury_The_Light.jpeg",
+      audioPath: "assets/audio/Casey_Edward-Bury_The_Light.mp3",
     ),
     //Song 2
     Song(
       songName: "Let Down",
       artistName: "Radiohead",
-      albumImagepath: "assets/Images/RadioHead-Let_Down.jpeg",
-      audioPath: "assets/Audio/Radiohead - Let Down.mp4",
+      albumImagepath: "assets/images/RadioHead-Let_Down.jpeg",
+      audioPath: "assets/audio/Radiohead - Let Down.mp4",
     ),
     // Add more songs here if needed
   ];

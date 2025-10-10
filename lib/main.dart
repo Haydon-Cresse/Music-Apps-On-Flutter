@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicappflutter/pages/home_pages.dart';
 import 'package:musicappflutter/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:musicappflutter/model/playlist_Provider.dart'; // <-- Add this import
+import 'package:musicappflutter/model/playlist_provider.dart';
 
 void main() {
   runApp(
@@ -21,10 +21,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePages(),
-      theme: Provider.of<ThemeProvider>(context).themeData,
+    return Consumer<ThemeProvider>(
+      builder: (context, themeProvider, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: HomePages(),
+          theme: themeProvider.themeData,
+        );
+      },
     );
   }
 }

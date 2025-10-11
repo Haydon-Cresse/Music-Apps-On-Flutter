@@ -22,6 +22,10 @@ class PlaylistProvider extends ChangeNotifier {
 
   // Current song index
   int _currentSongIndex = 0;
+
+  /*
+  A U D I O  P L A Y E R
+  */
   /*
 
   G E T T E R S

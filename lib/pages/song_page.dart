@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicappflutter/components/my_drawer.dart';
 import 'package:musicappflutter/components/neu_box.dart';
 import 'package:musicappflutter/model/playlist_provider.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,7 @@ class SongPage extends StatelessWidget {
         final currentSong = playlist[value.currentSongIndex];
 
         return Scaffold(
+          drawer: MyDrawer(),
           backgroundColor: Theme.of(context).colorScheme.surface,
           body: SafeArea(
             child: Padding(
@@ -31,9 +33,11 @@ class SongPage extends StatelessWidget {
                           icon: Icon(Icons.arrow_back),
                         ),
                         Text("P L A Y L I S T"),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.menu),
+                        Builder(
+                          builder: (ctx) => IconButton(
+                            onPressed: () => Scaffold.of(ctx).openDrawer(),
+                            icon: Icon(Icons.menu),
+                          ),
                         ),
                       ],
                     ),
